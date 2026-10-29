@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FastAPI Template</title>
+    <style>
+      table { border-collapse: collapse; }
+      td { border: 1px solid #999; padding: 4px 8px; }
+    </style>
+  </head>
+<body>
+	<h1>Add Student</h1>
+	{% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+	<form method="post" action="/student/insert">
+	<table>
+	<tr>
+		<td>學號</td>
+		<td>姓名</td>
+		<td>身高</td>
+	</tr>
+	<tr>
+		<td><input type="number" name="stuid" value="{{ stuid }}" required></td>
+		<td><input type="text" name="name" value="{{ name }}" maxlength="10" required></td>
+		<td><input type="number" name="height" value="{{ height }}" required></td>
+	</tr>
+	</table>
+	<input type="submit" value="新增">
+	<a href="/students/list/template">取消</a>
+	</form>
+</body>
+</html>
